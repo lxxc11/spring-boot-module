@@ -1,2 +1,2 @@
 # spring-boot-module
-spring boot module study
+  gradle初始化请参考官网：https://docs.gradle.org/current/samples/sample_building_java_libraries.html
