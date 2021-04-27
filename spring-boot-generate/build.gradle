@@ -12,5 +12,11 @@ repositories {
 }
 
 dependencies {
-    testCompile group: 'junit', name: 'junit', version: '4.12'
+    testImplementation("junit:junit:4.12")
+    implementation("com.baomidou:mybatis-plus-generator:3.4.1")
+    implementation("com.baomidou:mybatis-plus-boot-starter:3.4.2")
+    implementation("org.projectlombok:lombok:1.18.20")
+    implementation("mysql:mysql-connector-java:8.0.24")
+    //默认使用velocity模板
+    implementation("org.apache.velocity:velocity-engine-core:2.3")
 }
