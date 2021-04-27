@@ -29,6 +29,8 @@ public class Generator {
         mpg.setPackageInfo(getPackageConfig());
         // 策略配置
         mpg.setStrategy(getStrategyConfig());
+        // 模板生成配置
+        mpg.setTemplate(getTemplateConfig());
         // 执行代码生成器
         mpg.execute();
 
@@ -75,17 +77,7 @@ public class Generator {
 //        cfg.setFileOutConfigList(focList);
 //        mpg.setCfg(cfg);
 
-        // 配置模板
-//        TemplateConfig templateConfig = new TemplateConfig();
 
-        // 配置自定义输出模板
-        //指定自定义模板路径，注意不要带上.ftl/.vm, 会根据使用的模板引擎自动识别
-//         templateConfig.setEntity("templates/entity2.java");
-        // templateConfig.setService();
-        // templateConfig.setController();
-
-//        templateConfig.setXml(null);
-//        mpg.setTemplate(templateConfig);
 
 
 //        mpg.setTemplateEngine(new FreemarkerTemplateEngine());
@@ -140,5 +132,15 @@ public class Generator {
         strategy.setControllerMappingHyphenStyle(true);
         strategy.setTablePrefix("zs_","map_","im_");
         return strategy ;
+    }
+
+    private static TemplateConfig getTemplateConfig(){
+        // 配置模板
+        TemplateConfig templateConfig = new TemplateConfig();
+//         templateConfig.setEntity("templates/entity2.java");
+        templateConfig.setService(null);
+        templateConfig.setController(null);
+        templateConfig.setServiceImpl(null);
+        return templateConfig ;
     }
 }
