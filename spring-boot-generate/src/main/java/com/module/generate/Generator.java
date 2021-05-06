@@ -38,7 +38,6 @@ public class Generator {
         // 执行代码生成器
         mpg.execute();
 
-//        mpg.setTemplateEngine(new FreemarkerTemplateEngine());
     }
 
     private static GlobalConfig getGlobalConfig(){
