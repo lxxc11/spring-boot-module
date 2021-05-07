@@ -16,4 +16,6 @@ public class UserVo  implements Serializable {
      private String name ;
 
      private String password ;
+
+     private String email ;
 }

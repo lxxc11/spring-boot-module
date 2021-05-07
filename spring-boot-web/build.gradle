@@ -15,6 +15,7 @@ repositories {
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter'
     implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'com.github.xiaoymin:knife4j-spring-boot-starter:3.0.2'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     compile project(':spring-boot-common')
     compile project(':spring-boot-generate')

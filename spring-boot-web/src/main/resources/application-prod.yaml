@@ -1,2 +1,7 @@
 server:
   port: 8085
+
+knife4j:
+  enable: true
+  # 生产环境关闭
+  production: true
