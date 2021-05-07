@@ -8,8 +8,10 @@
  */
 
 rootProject.name = 'spring-boot-module'
+include 'spring-boot-generate'
+include 'spring-boot-common'
 include 'spring-boot-auth'
 include 'spring-boot-web'
-include 'spring-boot-common'
-include 'spring-boot-generate'
+
+
 
