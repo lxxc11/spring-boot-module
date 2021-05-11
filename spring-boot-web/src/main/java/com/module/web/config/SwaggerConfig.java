@@ -1,6 +1,5 @@
 package com.module.web.config;
 
-import com.github.xiaoymin.knife4j.spring.annotations.EnableKnife4j;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import springfox.documentation.builders.ApiInfoBuilder;
@@ -29,7 +28,7 @@ public class SwaggerConfig {
 
     @Bean
     public Docket defaultApi2() {
-        Docket docket=new Docket(DocumentationType.SWAGGER_2)
+        return new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(apiInfo())
                 //分组名称
                 .groupName("web分组")
@@ -38,7 +37,6 @@ public class SwaggerConfig {
                 .apis(RequestHandlerSelectors.basePackage("com.module.web.controller"))
                 .paths(PathSelectors.any())
                 .build().globalRequestParameters(parameter());
-        return docket;
     }
 
     private List<RequestParameter> parameter() {

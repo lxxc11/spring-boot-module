@@ -2,12 +2,10 @@ package com.module.web.controller;
 
 import com.github.xiaoymin.knife4j.annotations.ApiSupport;
 import com.module.common.api.ResponseResult;
-import com.module.web.service.UserService;
 import com.module.web.vo.TestVo;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 /**
