@@ -12,7 +12,6 @@ repositories {
 }
 
 dependencies {
-    testImplementation("junit:junit:4.12")
     implementation("com.baomidou:mybatis-plus-generator:3.4.1")
     //默认使用velocity模板
     implementation("org.apache.velocity:velocity-engine-core:2.3")
