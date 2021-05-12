@@ -1,4 +1,4 @@
-package com.module.web.service;
+package com.module.web.demo;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.module.web.vo.UserVo;
@@ -21,7 +21,7 @@ import org.springframework.web.context.WebApplicationContext;
  * @Date 2021/5/11 10:48
  **/
 @SpringBootTest
-public class UserControllerTest {
+public class DemoControllerTest {
 
     private MockMvc mockMvc ;
 
