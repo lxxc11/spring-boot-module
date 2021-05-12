@@ -6,7 +6,7 @@ ${SOURCEPATH}/../../test/java/${PACKAGE}/${FILENAME}
 ```
 Junit5简易模板参见
 ```
-resources/JUnitGenerator-Junit5-Template.txt
+resources/JUnitGenerator-Junit5-Template.vm
 ```  
 Idea 操作
 ```
