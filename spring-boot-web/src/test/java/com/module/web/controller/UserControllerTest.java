@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
+import org.springframework.test.annotation.Rollback;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultHandlers;
@@ -25,6 +26,7 @@ import java.util.Map;
 * @version 1.0 
 */ 
 @SpringBootTest
+@Transactional
 public class UserControllerTest { 
 
 	private MockMvc mockMvc ;
@@ -47,7 +49,7 @@ public class UserControllerTest {
 	* 
 	*/ 
 	@Test
-	public void testRegister() throws Exception { 
+	public void testRegister() throws Exception {
 		String requestUrl = "/user/register";
 		Map<String,Object> map = new HashMap<>();
 		map.put("name","lvxc123");
