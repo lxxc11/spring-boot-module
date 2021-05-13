@@ -1,5 +1,7 @@
 package com.module.web.service.impl;
 
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.module.generate.mapper.SysUserMapper;
 import com.module.generate.model.SysUser;
 import com.module.web.service.UserService;
@@ -27,5 +29,12 @@ public class UserServiceImpl implements UserService {
         sysUser.setLoginPassword(vo.getPassword());
         sysUser.setCreateTime(LocalDateTime.now());
         return sysUserMapper.insert(sysUser);
+    }
+
+    @Override
+    public Object selectUsers(Integer pageNum ,Integer pageSize) {
+        IPage<SysUser> page = new Page<>(pageNum, pageSize);
+        IPage<SysUser> sysUserIPage = sysUserMapper.selectPage(page, null);
+        return sysUserIPage;
     }
 }

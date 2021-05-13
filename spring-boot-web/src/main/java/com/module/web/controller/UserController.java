@@ -8,10 +8,7 @@ import com.module.web.vo.UserVo;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @Description
@@ -40,6 +37,15 @@ public class UserController {
     public ResponseResult<Integer> register2(@RequestBody UserVo vo) {
         Integer num = userService.register(vo);
         return ResponseResult.success(num);
+    }
+
+    @ApiOperation(value = "用户列表查询")
+    @ApiOperationSupport(author = "lvxc",order = 3,ignoreParameters = {"password","email"})
+    @GetMapping(value = "/selectUsers")
+    public ResponseResult<Object> selectUsers(@RequestParam(value = "pageNum" ,defaultValue="1") Integer pageNum
+                                            ,@RequestParam(value = "pageSize" ,defaultValue="10") Integer pageSize) {
+        Object data = userService.selectUsers(pageNum,pageSize);
+        return ResponseResult.success(data);
     }
 
 }
