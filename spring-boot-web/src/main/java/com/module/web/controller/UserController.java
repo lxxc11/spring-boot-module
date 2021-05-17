@@ -40,7 +40,7 @@ public class UserController {
     }
 
     @ApiOperation(value = "用户列表查询")
-    @ApiOperationSupport(author = "lvxc",order = 3,ignoreParameters = {"password","email"})
+    @ApiOperationSupport(author = "lvxc",order = 3)
     @GetMapping(value = "/selectUsers")
     public ResponseResult<Object> selectUsers(@RequestParam(value = "pageNum" ,defaultValue="1") Integer pageNum
                                             ,@RequestParam(value = "pageSize" ,defaultValue="10") Integer pageSize) {

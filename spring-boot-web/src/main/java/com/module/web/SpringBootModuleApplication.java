@@ -6,6 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.core.env.Environment;
 
+import javax.sql.DataSource;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 
@@ -18,10 +19,11 @@ public class SpringBootModuleApplication {
 		Environment env = application.getEnvironment();
 		String host= InetAddress.getLocalHost().getHostAddress();
 		String port=env.getProperty("server.port");
-		log.info("\n----------------------------------------------------------\n\t" +
-						"接口文档: \thttp://{}:{}/doc.html\n"+
-						"----------------------------------------------------------",
-				host,port);
+		log.info("\n----------------------------------------------------------\n" +
+						"\t接口文档: \thttp://{}:{}/doc.html\n"+
+						"\tDruid地址: \thttp://{}:{}/druid/index.html\n"+
+						"----------------------------------------------------------\n",
+				host,port,host,port);
 	}
 
 }
