@@ -114,6 +114,10 @@ public class ResponseResult<T> implements Serializable {
         return error(resultEnum.getCode(), msg);
     }
 
+    public static <T> ResponseResult<T> error(String message) {
+        return new ResponseResult<T>(ResultEnum.FAILED.getCode(), message, null);
+    }
+
     public boolean isSuccess() {
         return Objects.equals(this.code, ResultEnum.SUCCESS.getCode());
     }

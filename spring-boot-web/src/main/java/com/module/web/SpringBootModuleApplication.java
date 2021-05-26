@@ -10,7 +10,7 @@ import javax.sql.DataSource;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages = "com.module")
 @Slf4j
 public class SpringBootModuleApplication {
 
