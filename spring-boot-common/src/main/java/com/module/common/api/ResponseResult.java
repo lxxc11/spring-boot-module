@@ -83,8 +83,50 @@ public class ResponseResult<T> implements Serializable {
         this.data = data;
     }
 
+    public static <T> ResponseResultBuilder<T> builder(){ return  new  ResponseResultBuilder<T>();}
+
+    public static final class ResponseResultBuilder<T> {
+
+        private int code;
+
+        private String message;
+
+        private T data;
+
+        private ResponseResultBuilder() {
+        }
+
+        public ResponseResultBuilder<T> withCode(int code) {
+            this.code = code;
+            return this;
+        }
+
+        public ResponseResultBuilder<T> withMsg(String message) {
+            this.message = message;
+            return this;
+        }
+
+        public ResponseResultBuilder<T> withData(T data) {
+            this.data = data;
+            return this;
+        }
+
+        /**
+         * Build result.
+         *
+         * @return result
+         */
+        public ResponseResult<T> build() {
+            ResponseResult<T> restResult = new ResponseResult<T>();
+            restResult.setCode(code);
+            restResult.setMessage(message);
+            restResult.setData(data);
+            return restResult;
+        }
+    }
+
     public static <T> ResponseResult<T> success() {
-        return new ResponseResult<>(ResultEnum.SUCCESS.getCode(), ResultEnum.SUCCESS.getMsg());
+        return ResponseResult.<T>builder().withCode(ResultEnum.SUCCESS.getCode()).withMsg(ResultEnum.SUCCESS.getMsg()).build();
     }
 
     public static <T> ResponseResult<T> success(T data) {
@@ -92,18 +134,15 @@ public class ResponseResult<T> implements Serializable {
             List<T> a = new ArrayList<>();
             data = (T) a;
         }
-        return new ResponseResult<>(ResultEnum.SUCCESS.getCode(), ResultEnum.SUCCESS.getMsg(),data);
+        return ResponseResult.<T>builder().withCode(ResultEnum.SUCCESS.getCode()).withMsg(ResultEnum.SUCCESS.getMsg()).withData(data).build();
     }
 
     public static <T> ResponseResult<T> error(ResultEnum resultEnum) {
-        ResponseResult<T> result = new ResponseResult<>();
-        result.setCode(resultEnum.getCode());
-        result.setMessage(resultEnum.getMsg());
-        return result;
+        return ResponseResult.<T>builder().withCode(resultEnum.getCode()).withMsg(resultEnum.getMsg()).build();
     }
 
     public static <T> ResponseResult<T> error(Integer code, String msg) {
-        return new ResponseResult<>(code, msg);
+        return ResponseResult.<T>builder().withCode(code).withMsg(msg).build();
     }
 
     public static <T> ResponseResult<T> error() {
