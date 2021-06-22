@@ -2,12 +2,10 @@ package com.module.web.service.impl;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.module.common.exception.ApiException;
 import com.module.generate.mapper.SysUserMapper;
 import com.module.generate.model.SysUser;
 import com.module.web.service.UserService;
 import com.module.web.vo.UserVo;
-import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

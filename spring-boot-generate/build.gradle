@@ -1,23 +1,8 @@
-plugins {
-    id 'java'
-}
-
-group 'com.module'
-version '0.0.1-SNAPSHOT'
-
-sourceCompatibility = 1.8
-
-repositories {
-    mavenCentral()
-}
-
 dependencies {
+    compile project(":spring-boot-common")
     implementation("com.baomidou:mybatis-plus-generator:3.4.1")
     //默认使用velocity模板
     implementation("org.apache.velocity:velocity-engine-core:2.3")
     compile("com.baomidou:mybatis-plus-boot-starter:3.4.2")
-    implementation("org.projectlombok:lombok:1.18.20")
-    annotationProcessor("org.projectlombok:lombok:1.18.20")
     compile("mysql:mysql-connector-java:8.0.24")
-    compile("io.springfox:springfox-swagger2:3.0.0")
 }

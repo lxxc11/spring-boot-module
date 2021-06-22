@@ -1,1 +1,58 @@
+//定义扩展属性(给脚本用的脚本)
+buildscript {
+    //定义扩展属性(可选)
+    ext {
+        springBootVersion = "2.4.5"
+    }
+    repositories {
+        mavenLocal()
+        maven { url 'http://maven.aliyun.com/nexus/content/groups/public' }
+        //和maven中央仓库一样的另一个依赖管理仓库,主要是java
+        jcenter()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
 
+allprojects {
+    group = 'com.module'
+    version = '0.0.1-SNAPSHOT'
+}
+
+subprojects {
+    apply plugin: 'java'
+    apply plugin: 'maven'
+    apply plugin: 'org.springframework.boot'  //使用springboot插件
+    apply plugin: 'io.spring.dependency-management'  //版本管理插件
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+
+    tasks.withType(JavaCompile) {
+        options.encoding = 'UTF-8'
+    }
+
+    repositories {
+        mavenLocal()
+        maven { url 'http://maven.aliyun.com/nexus/content/groups/public' }
+        //和maven中央仓库一样的另一个依赖管理仓库,主要是java
+        jcenter()
+    }
+    dependencies {
+        testImplementation('org.springframework.boot:spring-boot-starter-test') {
+            exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+        }
+        implementation("org.projectlombok:lombok:1.18.20")
+        annotationProcessor("org.projectlombok:lombok:1.18.20")
+        compile("mysql:mysql-connector-java:8.0.24")
+        compile("io.springfox:springfox-swagger2:3.0.0")
+        implementation 'com.github.xiaoymin:knife4j-spring-boot-starter:3.0.2'
+    }
+
+    bootJar {
+        enabled = false
+    }
+    jar {
+        enabled = true
+    }
+}
