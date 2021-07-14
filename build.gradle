@@ -47,6 +47,7 @@ subprojects {
         compile("mysql:mysql-connector-java:8.0.24")
         compile("io.springfox:springfox-swagger2:3.0.0")
         implementation 'com.github.xiaoymin:knife4j-spring-boot-starter:3.0.2'
+        implementation 'com.alibaba.cloud:spring-cloud-starter-alibaba-nacos-config:2021.1'
     }
 
     bootJar {

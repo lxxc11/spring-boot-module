@@ -11,6 +11,7 @@ dependencies {
     compile project(':spring-boot-common')
     compile project(':spring-boot-generate')
     implementation 'com.alibaba:druid-spring-boot-starter:1.2.6'
+//    implementation fileTree(dir:'lib',includes:['*jar'])
 }
 
 test {

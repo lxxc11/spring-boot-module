@@ -6,6 +6,7 @@
     <!-- 某个包的日志级别 -->
     <logger name="org.springframework" level="info"/>
 
+
     <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
         <filter class="ch.qos.logback.classic.filter.LevelFilter">
             <level>INFO</level>
