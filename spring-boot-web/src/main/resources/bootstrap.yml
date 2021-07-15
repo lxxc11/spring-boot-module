@@ -7,5 +7,9 @@ spring:
         server-addr: 127.0.0.1:8848
         prefix: example
         file-extension: yaml
-#在nacos客户端新建一个Data ID 为example-dev.yaml ,Group为DEFAULT_GROUP
+#在nacos配置中心新建一个Data ID 为example-dev.yaml ,Group为DEFAULT_GROUP
 #配置格式为yaml,配置内容为 useLocalCache: true 的配置 。通过ConfigController中接口调用显示
+      discovery:
+        server-addr: 127.0.0.1:8848
+        service: service-provider
+

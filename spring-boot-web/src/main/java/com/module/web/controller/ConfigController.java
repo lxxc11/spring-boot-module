@@ -1,6 +1,7 @@
 package com.module.web.controller;
 
 import com.alibaba.nacos.api.config.annotation.NacosValue;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
@@ -18,6 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("config")
 @RefreshScope
+@Slf4j
 public class ConfigController {
     @Value("${useLocalCache:false}")
     private boolean useLocalCache;
@@ -28,6 +30,15 @@ public class ConfigController {
     @RequestMapping(value = "/get", method = RequestMethod.GET)
     @ResponseBody
     public boolean get() {
+        //日志级别动态刷新,nacos配置中心配置如下
+//        logging:
+//          level:
+//            root: warn
+//            com.alibaba: debug
+        log.debug("debug get");
+        log.info("info get");
+        log.warn("warn get");
+        log.error("error get");
         return useLocalCache;
     }
 
