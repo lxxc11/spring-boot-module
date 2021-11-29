@@ -3,7 +3,7 @@ package com.module.web;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+//import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.core.env.Environment;
 
@@ -11,7 +11,7 @@ import java.net.InetAddress;
 
 @SpringBootApplication(scanBasePackages = "com.module")
 @Slf4j
-@EnableDiscoveryClient
+//@EnableDiscoveryClient
 public class SpringBootModuleApplication {
 
   public static void main(String[] args) throws Exception {
