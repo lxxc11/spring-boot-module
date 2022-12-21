@@ -49,6 +49,8 @@ subprojects {
         implementation 'com.github.xiaoymin:knife4j-spring-boot-starter:3.0.2'
 //        implementation 'com.alibaba.cloud:spring-cloud-starter-alibaba-nacos-config:2021.1'
 //        implementation 'com.alibaba.cloud:spring-cloud-starter-alibaba-nacos-discovery:2021.1'
+        implementation group: 'ws.schild', name: 'jave-core', version: '3.3.1'
+        implementation group: 'ws.schild', name: 'jave-nativebin-win64', version: '3.3.1'
     }
 
     bootJar {
